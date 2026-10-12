@@ -1,0 +1,271 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-shell: var(--shell);
+  --color-stone: var(--stone);
+  --color-gold: var(--gold);
+  --color-deep-gold: var(--deep-gold);
+  --color-sage: var(--sage);
+  --color-amber: var(--amber);
+  --color-clay: var(--clay);
+  --color-olive: var(--olive);
+  --color-leaf: var(--leaf);
+  --color-live: var(--live);
+  --color-ready: var(--ready);
+  --color-tobacco: var(--tobacco);
+  --font-sans: "Hanken Grotesk", system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+}
+
+:root {
+  color-scheme: light;
+  --radius: 0.875rem;
+  --background: #F5EEE2;
+  --foreground: #2A211B;
+  --card: #FBF7EE;
+  --card-foreground: #2A211B;
+  --popover: #FBF7EE;
+  --popover-foreground: #2A211B;
+  --primary: #3A2A1E;
+  --primary-foreground: #F3EAD8;
+  --secondary: #EFE5D3;
+  --secondary-foreground: #2A211B;
+  --muted: #EFE5D3;
+  --muted-foreground: #76695C;
+  --accent: #B08238;
+  --accent-foreground: #3A2A1E;
+  --destructive: #8F6417;
+  --destructive-foreground: #FBF7EE;
+  --border: rgba(58, 42, 30, 0.14);
+  --input: rgba(58, 42, 30, 0.14);
+  --ring: #B08238;
+  --shell: #FBF7EE;
+  --stone: #76695C;
+  --gold: #B08238;
+  --deep-gold: #9A6F2E;
+  --sage: #3F7A4C;
+  --amber: #8F6417;
+  --clay: #8F6417;
+  --olive: #2F3526;
+  --leaf: #7C8A5A;
+  --live: #3F9A55;
+  --ready: #3F7A4C;
+  --tobacco: #8F6417;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.984 0.003 247.858);
+  --sidebar-foreground: oklch(0.129 0.042 264.695);
+  --sidebar-primary: oklch(0.208 0.042 265.755);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.968 0.007 247.896);
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-border: oklch(0.929 0.013 255.508);
+  --sidebar-ring: oklch(0.704 0.04 256.788);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    letter-spacing: 0;
+    min-width: 0;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    letter-spacing: 0;
+  }
+}
+
+.sticky-action-bar {
+  position: fixed;
+  z-index: 35;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-height: calc(72px + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--border);
+  background: color-mix(in oklab, var(--background) 96%, transparent);
+  padding-bottom: env(safe-area-inset-bottom);
+  backdrop-filter: blur(14px);
+}
+
+.sticky-action-bar--static {
+  position: static;
+  min-height: 72px;
+  padding-bottom: 0;
+  backdrop-filter: none;
+}
+
+.queue-card {
+  container-name: queuecard;
+  container-type: inline-size;
+}
+
+.queue-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.queue-actions > * {
+  min-width: 0;
+  min-height: 44px;
+  padding-right: 12px;
+  padding-left: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+@container queuecard (min-width: 520px) {
+  .queue-actions { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@container queuecard (max-width: 280px) {
+  .queue-actions > * { padding-right: 8px; padding-left: 8px; font-size: 13px; }
+}
+
+.scrollbar-hidden { scrollbar-width: none; }
+.scrollbar-hidden::-webkit-scrollbar { display: none; }
+
+@utility tabular-nums {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+@utility soft-shadow {
+  box-shadow: 0 20px 50px color-mix(in oklab, var(--foreground) 9%, transparent);
+}
+
+@utility label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@utility quiet-field {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  &:focus-visible {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--gold) 18%, transparent);
+    outline: none;
+  }
+}
+
+.crown-logo { color: var(--gold); }
+
+@keyframes live-breathe {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--live) 35%, transparent); }
+  50% { box-shadow: 0 0 0 8px color-mix(in oklab, var(--live) 0%, transparent); }
+}
+@keyframes leaf-sway { 0%, 100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
+@keyframes portrait-glow { 0%, 100% { box-shadow: 0 0 0 7px color-mix(in oklab, var(--gold) 24%, transparent), 0 0 24px color-mix(in oklab, var(--gold) 20%, transparent); } 50% { box-shadow: 0 0 0 9px color-mix(in oklab, var(--gold) 35%, transparent), 0 0 38px color-mix(in oklab, var(--gold) 34%, transparent); } }
+@keyframes light-sweep { 0%, 35% { transform: translateX(-150%) skewX(-18deg); } 100% { transform: translateX(300%) skewX(-18deg); } }
+
+@utility live-dot {
+  background: var(--live);
+  animation: live-breathe 2.4s ease-in-out infinite;
+}
+@utility leaf-sway { animation: leaf-sway 6.5s ease-in-out infinite; transform-origin: bottom center; }
+@utility portrait-glow { animation: portrait-glow 2.6s ease-in-out infinite; }
+@utility hero-sweep {
+  &::after { content: ""; position: absolute; inset: 0 auto 0 -30%; width: 22%; background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--background) 35%, transparent), transparent); animation: light-sweep 3s 1s cubic-bezier(.22,1,.36,1) 1 both; pointer-events: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.15s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.15s !important;
+  }
+
+  .live-dot,
+  .leaf-sway,
+  .portrait-glow,
+  .hero-sweep::after {
+    animation: none !important;
+  }
+}

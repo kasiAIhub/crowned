@@ -1,0 +1,97 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1790436644630,
+      "tag": "0000_crowned_tables",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1790436734705,
+      "tag": "0001_crowned_internal_functions",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790436860120,
+      "tag": "0002_crowned_public_functions",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1790436921820,
+      "tag": "0003_fix_create_booking_alias",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1790437082411,
+      "tag": "0004_fix_reset_demo_where",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1790437364032,
+      "tag": "0005_safe_reset_demo",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1790437504740,
+      "tag": "0006_fix_public_overview_closed",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1790441278880,
+      "tag": "0007_salon_extras",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1790447271788,
+      "tag": "0008_restrict_public_catalog_and_live_state_reads",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1790507895264,
+      "tag": "0009_practice_salon_isolated_demo",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1791388768311,
+      "tag": "0010_whatsapp_consent",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1791389301432,
+      "tag": "0011_practice_close_22",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "7",
+      "when": 1791391286340,
+      "tag": "0012_whatsapp_sending",
+      "breakpoints": true
+    }
+  ]
+}

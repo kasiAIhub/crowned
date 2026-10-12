@@ -1,0 +1,2 @@
+update practice.salon_settings set default_closing_time = '22:00' where id = 1;
+update practice.salon_days set closes_at = (label_date::timestamp + time '22:00') at time zone 'Africa/Johannesburg' where label_date >= '2026-10-07';
