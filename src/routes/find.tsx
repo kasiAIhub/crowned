@@ -58,7 +58,7 @@ function FindPage() {
     <main className="flex min-h-[100svh] flex-col bg-background">
       <CrownedHeader />
       <section className="mx-auto flex w-full max-w-xl flex-1 flex-col justify-center px-5 pb-[calc(24px+env(safe-area-inset-bottom))] pt-5 sm:px-8">
-        <p className="mb-3 text-[13px] font-bold uppercase text-deep-gold">Hello, how are you?</p>
+        <p className="mb-3 text-[13px] font-bold uppercase text-deep-gold">Welcome back</p>
         <h1 className="font-display text-[32px] leading-[1.12]">Find her booking</h1>
 
         {saved.length > 0 && (
@@ -108,7 +108,7 @@ function FindPage() {
             {busy ? "Looking…" : "Find my booking"}
           </Button>
           <p className="mt-auto pt-8 text-[13px] leading-5 text-muted-foreground">
-            Demo note: anyone who knows your number and her first name can open this booking. The full version will send you a one-time code.
+            We ask for your number and her first name to keep your booking private.
           </p>
         </form>
       </section>
