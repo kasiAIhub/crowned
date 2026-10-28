@@ -176,6 +176,7 @@ function BookingPage() {
 
   const activeAlert = useMemo(() => {
     if (!booking || !settings) return undefined;
+    if (status === "cancelled") return undefined;
     if (booking.at_risk && !booking.finish_today_confirmed) {
       return {
         moment: "at-risk",
@@ -324,7 +325,7 @@ function BookingPage() {
               <span className="tabular-nums">{booking.code}</span>
             </div>
             <h1 className="mt-4 font-display text-[32px] font-medium leading-tight">
-              Hello {booking.parent_first_name}, how are you? {booking.child_name} has a confirmed place in today's
+              Hi {booking.parent_first_name}. {booking.child_name} has a confirmed place in today's
               line.
             </h1>
             {booking.status === "booked" && <Position position={booking.position} child={booking.child_name} />}
@@ -446,7 +447,7 @@ function Confirmation({
         </motion.svg>
         <h1 className="mt-4 font-display text-[48px] leading-[1.06]">You're booked.</h1>
         <p className="mt-4 text-[17px] leading-7">
-          Hello {booking.parent_first_name}, how are you? {booking.child_name} has a confirmed place in today's line.
+          Hi {booking.parent_first_name}. {booking.child_name} has a confirmed place in today's line.
           {booking.position ? ` She's ${ordinal(booking.position)}.` : ""} We'll call you.
         </p>
         <div className="my-auto rounded-2xl bg-shell p-5 text-center">
