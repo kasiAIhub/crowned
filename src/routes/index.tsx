@@ -56,7 +56,7 @@ function WelcomePage() {
             <p className="text-[15px] leading-6 text-muted-foreground">A calm chair, neat parts and braids done on time. Book her place in a minute and we'll call you when it's her turn.</p>
           </div>
           <div className="mt-2 rounded-[18px] border border-border bg-shell p-2">
-              <Button asChild size="lg" className="w-full"><Link to="/demo">Book her place <ArrowRight /></Link></Button>
+              <Button asChild size="lg" className="w-full"><Link to="/book">Book her place <ArrowRight /></Link></Button>
               <Button asChild variant="ghost" size="lg" className="mt-2 w-full text-muted-foreground"><Link to="/find">I've already booked</Link></Button>
             </div></div>
         </motion.div>
@@ -72,8 +72,8 @@ function WelcomePage() {
         <p className="text-[13px] font-bold uppercase text-deep-gold">The difference</p>
         <h2 className="mt-2 font-display text-[32px]">Less chasing. More braiding.</h2>
         <div className="mt-6 grid items-stretch gap-8 md:grid-cols-2">
-          <StoryVideo src={beforeVideo.url} fallbackSrc={beforeVideoWebm.url} poster={beforePoster.url} label="Before Crowned" copy="Parents needed answers, and Zama had to stop braiding to give them. The message overlays shown here tell that old story; Crowned does not send WhatsApp or SMS alerts." />
-          <StoryVideo src={afterVideo.url} fallbackSrc={afterVideoWebm.url} poster={afterPoster.url} label="With Crowned" copy="The family follows one private live booking page. Alerts work on that open page, with optional browser notifications." />
+          <StoryVideo src={beforeVideo.url} fallbackSrc={beforeVideoWebm.url} poster={beforePoster.url} label="Before Crowned" copy="Parents needed answers, and Zama had to stop braiding to give them." />
+          <StoryVideo src={afterVideo.url} fallbackSrc={afterVideoWebm.url} poster={afterPoster.url} label="With Crowned" copy="The family follows one private live booking page and sees when to come, with optional browser notifications." />
         </div>
       </section>
 
@@ -85,7 +85,7 @@ function WelcomePage() {
         <div className="mx-auto mt-4 max-w-6xl px-5 sm:px-8">
         <div className="grid gap-5 border-t border-border pt-6 md:grid-cols-[1fr_auto] md:items-center">
           <p className="flex max-w-3xl items-start gap-3 text-[13px] leading-5 text-muted-foreground"><CircleCheck className="mt-0.5 size-5 shrink-0 text-sage" />Your booking is confirmed straight away, with a place in today's line. We don't give a fixed time, because braids vary. We track her chair live instead.</p>
-          <div className="border border-border bg-shell p-4 text-[13px]"><p className="font-bold">Judges: try it</p><p className="mt-1 text-muted-foreground">Book an example family as a parent, then move the salon line. No PIN needed. Best on a laptop: <Link to="/demo" className="font-bold underline">try the booking flow</Link>.</p></div>
+          
         </div></div>
       </section>
     </main>
