@@ -55,7 +55,7 @@ export function PinGate({ children }: { children: (pin: string) => ReactNode }) 
           <button onClick={() => press("0")} className="h-18 rounded-2xl border border-border bg-shell font-display text-[32px] font-semibold active:scale-[0.98] active:bg-muted">0</button>
           <button onClick={() => setEntry(entry.slice(0, -1))} aria-label="Delete" className="flex h-18 items-center justify-center rounded-2xl text-stone active:bg-muted"><Delete /></button>
         </div>
-        <p className="mt-8 text-center text-[13px] text-stone">Judges: the live demo runs on a practice salon and needs no PIN.</p>
+        
       </section>
     </main>
   );
