@@ -12,9 +12,9 @@ import { PRACTICE_FRAME, PRACTICE_PIN } from "@/lib/practice";
 export const Route = createFileRoute("/demo")({
   head: () => ({
     meta: [
-      { title: "Live judge demo — Crowned" },
+      { title: "Crowned salon demo" },
       { name: "description", content: "Follow a family booking and Zama's live salon floor side by side." },
-      { property: "og:title", content: "Live judge demo — Crowned" },
+      { property: "og:title", content: "Crowned salon demo" },
       { property: "og:description", content: "Follow a family booking and Zama's live salon floor side by side." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -61,7 +61,7 @@ function DemoPage() {
         <CrownedHeader />
         <span className="hidden items-center gap-2 text-[13px] font-bold text-sage sm:flex">
           <Monitor className="size-4" />
-          Live judge view
+          Salon demo
         </span>
       </div>
       <div className="mx-auto max-w-[1500px] px-4 pb-24 sm:px-6">
