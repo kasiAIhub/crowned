@@ -306,7 +306,7 @@ function BookingPage() {
         <CrownedHeader inverse={booking.status === "called"} />
       </div>
       <AnimatePresence>
-        {notice && <AlertBanner notice={notice} onClose={() => setNotice(undefined)} />}
+        {notice && status !== "cancelled" && status !== "collected" && <AlertBanner notice={notice} onClose={() => setNotice(undefined)} />}
       </AnimatePresence>
       <section className="mx-auto max-w-xl px-5 pb-16 pt-4 sm:px-8">
         <StatusLead
