@@ -272,7 +272,7 @@ function BookPage() {
                       onChange={(e) => setPhone(e.target.value.replace(/\D/g, "").slice(0, 10))}
                     />
                     <span className="mt-2 block text-[13px] text-muted-foreground">We use your number to find your booking again. No marketing.</span>
-                    <label className="mt-3 flex min-h-11 items-start gap-3 text-[14px] leading-5">
+                    <label className="mt-3 hidden gap-3 text-[14px] leading-5">
                       <input type="checkbox" className="mt-0.5 size-6 shrink-0 accent-foreground" checked={waConsent} onChange={(e) => setWaConsent(e.target.checked)} />
                       <span>Yes, send me WhatsApp messages about my place in the queue. I can opt out any time.</span>
                     </label>
@@ -401,8 +401,9 @@ function BookPage() {
                 </p>
               )}
               {refusal && <p className="mt-2 text-[15px] font-semibold text-clay" role="alert">{refusal}</p>}
+              {step === 3 && !agreed && !refusal && <p className="mt-1 text-[13px] font-semibold text-deep-gold">Tick "I understand and agree" above to book.</p>}
             </div>
-            {step === 3 && <label className="flex min-h-11 shrink-0 items-center gap-2 text-[14px] font-semibold"><input type="checkbox" className="size-5 accent-foreground" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} /><span className="sr-only">I understand and agree</span></label>}
+            
             <Button size="lg" className="shrink-0 px-5" disabled={primary.disabled} onClick={() => void primary.onClick()}>
               {primary.label}
             </Button>
